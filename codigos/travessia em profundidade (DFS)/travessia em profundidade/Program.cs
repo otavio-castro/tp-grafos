@@ -136,6 +136,23 @@ class Grafo
 class Program
 {
     // Carrega grafo do arquivo, executa DFS e exibe resultados com interface visual animada.
+
+    static string CaminhoDoProjeto(string arquivo)
+    {
+        string dir = Directory.GetCurrentDirectory();
+
+        while (dir != null)
+        {
+            var csproj = Directory.GetFiles(dir, "*.csproj");
+
+            if (csproj.Length > 0)
+                return Path.Combine(dir, arquivo);
+
+            dir = Directory.GetParent(dir)?.FullName;
+        }
+
+        throw new Exception($"Arquivo '{arquivo}' não encontrado no projeto");
+    }
     static void Main(string[] args)
     {
         try
@@ -151,7 +168,8 @@ class Program
                     ctx.Spinner(Spinner.Known.Star);
                     ctx.SpinnerStyle(Style.Parse("green"));
 
-                    string[] linhas = File.ReadAllLines("grafo.txt");
+                    string caminho = CaminhoDoProjeto("grafo.txt");
+                    string[] linhas = File.ReadAllLines(caminho);
                     int numVertices = int.Parse(linhas[0]);
 
                     ctx.Status($"Criando grafo com {numVertices} vértices...");
@@ -168,7 +186,7 @@ class Program
                     }
 
                     ctx.Status("Processando grafo...");
-                    System.Threading.Thread.Sleep(500); 
+                    System.Threading.Thread.Sleep(500);
 
                     AnsiConsole.MarkupLine("[green]✓[/] Grafo carregado com sucesso!");
                     AnsiConsole.WriteLine();
@@ -187,4 +205,5 @@ class Program
             AnsiConsole.WriteException(ex);
         }
     }
+
 }
