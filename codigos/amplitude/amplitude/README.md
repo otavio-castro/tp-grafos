@@ -44,7 +44,7 @@ amplitude/
   - Executa o algoritmo de busca em amplitude
   - Gera resultado detalhado com passos
 
-### ?? UI
+### ??? UI
 - **IGrafoUI/GrafoUI**: 
   - Exibe título e interface principal
   - Mostra estrutura do grafo
