@@ -1,0 +1,12 @@
+# Grafo de exemplo - Rede Social Simplificada
+# Formato: usuario:amigos
+Alice:Bob,Carol,Dave
+Bob:Alice,Eve,Frank
+Carol:Alice,Grace
+Dave:Alice,Henry
+Eve:Bob,Ian
+Frank:Bob
+Grace:Carol,Jack
+Henry:Dave
+Ian:Eve
+Jack:Grace

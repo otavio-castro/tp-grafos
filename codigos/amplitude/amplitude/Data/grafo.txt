@@ -1,0 +1,12 @@
+# Grafo de exemplo - Lista de Adjacências
+# Formato: vertice:adjacente1,adjacente2,adjacente3
+A:B,C,D
+B:A,E,F
+C:A,G
+D:A,H
+E:B,I
+F:B
+G:C,J
+H:D
+I:E
+J:G

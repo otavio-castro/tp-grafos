@@ -1,0 +1,10 @@
+# Grafo de exemplo - Mapa de Cidades
+# Formato: cidade:cidades_conectadas
+SP:RJ,BH,Campinas
+RJ:SP,Vitoria
+BH:SP,Brasilia
+Campinas:SP,Sorocaba
+Vitoria:RJ
+Brasilia:BH,Goiania
+Sorocaba:Campinas
+Goiania:Brasilia
