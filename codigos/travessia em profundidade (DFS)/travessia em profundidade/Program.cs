@@ -3,7 +3,10 @@
 class Grafo
 {
     private int vertices;
-    private int[,] matriz;  
+    private int[,] matriz;
+    private int tempo;
+    private int[] descoberta;
+    private int[] termino;
 
     public Grafo(int v)
     {
@@ -21,21 +24,46 @@ class Grafo
     public void DFS(int inicio)
     {
         bool[] visitado = new bool[vertices];
-        DFSUtil(inicio, visitado);
+        descoberta = new int[vertices];
+        termino = new int[vertices];
+        tempo = 0;
+
+        Console.WriteLine("Árvore DFS:");
+        DFSUtil(inicio, visitado, -1);
+
+        Console.WriteLine("\nTempos de Descoberta e Término:");
+        for (int i = 0; i < vertices; i++)
+        {
+            if (descoberta[i] > 0)
+                Console.WriteLine($"{i}: ({descoberta[i]},{termino[i]})");
+        }
     }
 
-    private void DFSUtil(int v, bool[] visitado)
+    private void DFSUtil(int v, bool[] visitado, int pai)
     {
         visitado[v] = true;
-        Console.WriteLine(v);
+        tempo++;
+        descoberta[v] = tempo;
+
+        if (pai != -1)
+        {
+            Console.WriteLine($"{pai} -- {v}");
+        }
+        else
+        {
+            Console.WriteLine($"Raiz: {v}");
+        }
 
         for (int u = 0; u < vertices; u++)
         {
             if (matriz[v, u] > 0 && !visitado[u])
             {
-                DFSUtil(u, visitado);
+                DFSUtil(u, visitado, v);
             }
         }
+
+        tempo++;
+        termino[v] = tempo;
     }
 
     public void ImprimirArestas()
@@ -72,8 +100,9 @@ class Program
             g.AdicionarAresta(v, u, peso);
         }
 
+
         g.ImprimirArestas();
-        Console.WriteLine("\nDFS a partir de 0:");
+        Console.WriteLine();
         g.DFS(0);
     }
 }
