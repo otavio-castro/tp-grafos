@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prim", "Prim.csproj", "{4843B20F-2AE3-A365-94D1-BB20342C27DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4843B20F-2AE3-A365-94D1-BB20342C27DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4843B20F-2AE3-A365-94D1-BB20342C27DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4843B20F-2AE3-A365-94D1-BB20342C27DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4843B20F-2AE3-A365-94D1-BB20342C27DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80492829-306D-45ED-A987-2C125AC3A29E}
+	EndGlobalSection
+EndGlobal

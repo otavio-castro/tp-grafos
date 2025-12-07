@@ -1,0 +1,12 @@
+# Grafo - Matriz de Adjacência
+# Primeira linha: número de vértices
+# Linhas seguintes: matriz de adjacência (peso das arestas)
+# 0 = sem aresta | número > 0 = peso da aresta
+
+6
+0 4 0 0 0 0
+4 0 8 0 0 0
+0 8 0 7 2 4
+0 0 7 0 9 14
+0 0 2 9 0 10
+0 0 4 14 10 0
